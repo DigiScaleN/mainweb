@@ -1,0 +1,254 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.8%;
+}
+
+:root {
+    --color1: #04f0b5;
+    --color2: #02b88b;
+
+    --font1: 'Poppins', sans-serif;
+    --font2: 'Roboto', sans-serif;
+    ;
+}
+
+/*
+===========================================
+Navigation Bar
+===========================================
+*/
+nav#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    position: sticky;
+    transition: all .4s;
+    top: 0;
+}
+
+nav#navbar ul#nav_list {
+    list-style: none;
+    display: flex;
+}
+
+nav#navbar ul#nav_list li {
+    font-size: 16px;
+    margin-right: 40px;
+}
+
+nav#navbar ul#nav_list li a {
+    text-decoration: none;
+    font-family: var(--font2);
+    color: #000;
+    transition: color .3s;
+    font-weight: 600;
+}
+
+nav#navbar ul#nav_list li a:hover {
+    color: var(--color2);
+}
+
+nav#navbar.sticky {
+    background: #26ffc94c;
+}
+
+.close_nav,
+.fa-bars {
+    display: none;
+}
+
+/*
+===========================================
+Home Section
+===========================================
+*/
+
+/* Social Linkes */
+.social_links {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -45px;
+    display: flex;
+    flex-direction: column;
+    transition: all .3s ease;
+}
+
+.social_links.open {
+    right: 0%;
+}
+
+i.close_btn {
+    position: relative;
+    background-color: var(--color1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 17px;
+    top: 10px;
+    width: 30px;
+    height: 30px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.social_links.open i.close_btn {
+    left: initial !important;
+}
+
+.social_links a {
+    padding: 15px;
+    font-size: 20px;
+    background: blue;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+}
+
+.social_links a.fa-facebook-f {
+    border-top-left-radius: 20px;
+    background: #3b5998;
+}
+
+.social_links a.fa-instagram {
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f09433', endColorstr='#bc1888', GradientType=1);
+    font-size: 25px;
+}
+
+.social_links a.fa-linkedin {
+    background: #0A66C2;
+}
+
+.social_links a.fa-medium {
+    border-bottom-left-radius: 20px;
+    background: #4EA14F;
+}
+
+.social_links i.close_btn {
+    left: -30px !important;
+}
+
+/* Social Linkes End*/
+
+
+section#home {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section#home h1 {
+    font-size: 4.7rem;
+    text-align: center;
+    font-family: var(--font1);
+    padding: 0 80px;
+    margin-bottom: 20px;
+}
+
+section#home p {
+    font-family: var(--font2);
+    font-size: 2.5rem;
+    padding: 0 80px;
+    text-align: center;
+}
+
+section#home p#desc {
+    margin: 20px 0;
+    font-size: 1.76rem;
+}
+
+
+@media screen and (max-width:750px) {
+    html {
+        font-size: 52%;
+    }
+
+    section#home h1 {
+        padding: 0 50px;
+    }
+}
+
+@media screen and (max-width:650px) {
+    html {
+        font-size: 38%;
+    }
+
+    nav#navbar ul#nav_list {
+        position: fixed;
+        flex-direction: column;
+        left: -200px;
+        top: 75px;
+        background: #000000e8;
+        height: 100%;
+        transition: all .4s ease;
+        z-index: 4 !important;
+    }
+
+    nav#navbar ul#nav_list.open_nav {
+        left: 0;
+    }
+
+    nav#navbar ul#nav_list li {
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+
+    nav#navbar ul#nav_list li a {
+        color: #fff;
+    }
+
+    nav#navbar ul#nav_list li a:hover {
+        color: #fff;
+    }
+
+    nav#navbar ul#nav_list li a:active {
+        color: var(--color2);
+    }
+
+    .close_nav,
+    .fa-bars {
+        display: block;
+    }
+
+    .close_nav {
+        color: #fff;
+        position: absolute;
+        font-size: 16px;
+        right: 10px;
+        top: 5px;
+    }
+
+    .fa-bars {
+        font-size: 28px;
+        margin-right: 20px;
+        color: var(--color2);
+    }
+}
+
+
+@media screen and (max-width:500px) {
+    html {
+        font-size: 30%;
+    }
+
+    #home h1 {
+        padding: 0 20px !important;
+    }
+
+    #home p {
+        padding: 0 20px !important;
+    }
+}
